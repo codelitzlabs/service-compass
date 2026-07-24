@@ -4,6 +4,8 @@ Everything an engineer needs about a service in one place.
 
 Service Compass is a lightweight, focused, and opinionated engineering context platform maintained by Codelitz Labs. It is not intended to clone Spotify Backstage or become a general developer-portal framework. It keeps service ownership, repositories, environments, documentation, observability, deployment, and other useful links easy to find.
 
+![Service Compass service catalog](docs/images/service-catalog.png)
+
 > **Project status:** Service Compass is in an early open-source stage. The APIs and data model may evolve before a stable release. It has not yet been declared production-ready.
 
 ## Problem
@@ -26,14 +28,23 @@ Service Compass stores links to external tools; it does not currently integrate 
 
 ## Screenshots
 
-Screenshots are not yet included. Before a public announcement, add sanitized images to [`docs/images/`](docs/images/) showing:
+### Service catalog
 
-- catalog dashboard
-- service details
-- catalog JSON import
-- team management
+Browse services, search the catalog, and quickly identify ownership, lifecycle, and technical context.
 
-Do not include private repositories, internal URLs, credentials, or company/customer data.
+![Service Compass service catalog](docs/images/service-catalog.png)
+
+### Service details
+
+View repositories, environments, documentation, observability, deployment, and other useful service links in one place.
+
+![Service Compass service details](docs/images/service-details.png)
+
+### Team management
+
+Manage teams and maintain clear service ownership information.
+
+![Service Compass team management](docs/images/team-management.png)
 
 ## Architecture
 

@@ -13,9 +13,9 @@ Service Compass is in an early open-source stage and has not yet published a sup
 
 Do not report suspected vulnerabilities in a public GitHub issue, discussion, pull request, log, or screenshot.
 
-Use GitHub private vulnerability reporting when it is enabled. If it is unavailable, contact `opensource@codelitz.com`.
+Use GitHub private vulnerability reporting when it is enabled. If it is unavailable, contact `contact@codelitz.com`.
 
-> **Maintainer verification required:** confirm that `opensource@codelitz.com` is monitored before publication, or replace it with a verified private security contact.
+> **Maintainer verification required:** confirm that `contact@codelitz.com` is monitored before publication, or replace it with a verified private security contact.
 
 Include:
 

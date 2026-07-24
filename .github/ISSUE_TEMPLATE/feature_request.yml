@@ -1,0 +1,39 @@
+name: Feature request
+description: Propose a focused improvement to Service Compass
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Describe the user problem without assuming a particular implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: textarea
+    id: scope
+    attributes:
+      label: Impact on current scope
+      description: How does this fit a small, focused engineering context platform?
+    validations:
+      required: true
+  - type: dropdown
+    id: contribute
+    attributes:
+      label: Willingness to contribute
+      options:
+        - I can submit a pull request
+        - I can help test or review
+        - I am proposing the idea only
+    validations:
+      required: true

@@ -1,0 +1,2 @@
+import {Slot} from '@radix-ui/react-slot';import type{ButtonHTMLAttributes}from'react';
+export function Button({asChild,secondary,className='',...props}:ButtonHTMLAttributes<HTMLButtonElement>&{asChild?:boolean;secondary?:boolean}){const C=asChild?Slot:'button';return <C className={`focus-ring inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition disabled:opacity-50 ${secondary?'border border-line bg-white hover:border-brand':'bg-brand text-white hover:bg-brand-dark'} ${className}`} {...props}/>}

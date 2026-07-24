@@ -1,0 +1,50 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-service_compass}
+      POSTGRES_USER: ${POSTGRES_USER:-service_compass}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local-development-only}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  backend:
+    build: backend
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-service_compass}
+      DB_USERNAME: ${POSTGRES_USER:-service_compass}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-local-development-only}
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  backend-tests:
+    image: maven:3.9.11-eclipse-temurin-25
+    working_dir: /app
+    command: mvn test
+    volumes:
+      - ./backend:/app
+      - maven-cache:/root/.m2
+    environment:
+      TESTCONTAINERS_HOST_OVERRIDE: host.docker.internal
+    profiles: ["test"]
+
+  frontend:
+    build: frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres-data:
+  maven-cache:
